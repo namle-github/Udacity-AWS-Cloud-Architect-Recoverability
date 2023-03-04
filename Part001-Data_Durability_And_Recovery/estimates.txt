@@ -1,0 +1,4 @@
+Minimum RTO for a single AZ outage: with multi-AZ, if primary instance fails, it failover into secondary instance. It takes about 60s
+Minimum RTO for a single region outage: 5mins to 1 hour depends on the recovery strategy
+Minimum RPO for a single AZ outage: the best case it can achieve that is zero RPO
+Minimum RPO for a single region outage: minutes to hours depends on the time for data backup

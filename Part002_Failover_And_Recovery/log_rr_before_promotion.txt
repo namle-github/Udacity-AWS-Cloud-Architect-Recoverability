@@ -1,0 +1,38 @@
+mysql> show datababes;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'datababes' at line 1
+mysql> show databases;
++--------------------+
+| Database           |
++--------------------+
+| information_schema |
+| mysql              |
+| performance_schema |
+| sys                |
+| udacity            |
++--------------------+
+5 rows in set (0.03 sec)
+
+mysql> use udacity;
+Reading table information for completion of table and column names
+You can turn off this feature to get a quicker startup with -A
+
+Database changed
+mysql> show tables;
++-------------------+
+| Tables_in_udacity |
++-------------------+
+| employees         |
++-------------------+
+1 row in set (0.00 sec)
+
+mysql> select * from employees;
++------------+----------+-----------+---------+------------+
+| EmployeeID | LastName | FirstName | Address | Phone      |
++------------+----------+-----------+---------+------------+
+|          1 | Le       | Nam       | Cebu    | 0123456789 |
++------------+----------+-----------+---------+------------+
+1 row in set (0.00 sec)
+
+mysql> insert into employees values(2,'Timberlake','Justin','US','0123456789');
+ERROR 1290 (HY000): The MySQL server is running with the --read-only option so it cannot execute this statement
+mysql>

@@ -1,0 +1,63 @@
+[ec2-user@ip-10-1-11-72 ~]$ mysql -u admin -p -h database-1-replica.c2psnovq2yzq.us-west-2.rds.amazonaws.com
+Enter password: 
+^C
+[ec2-user@ip-10-1-11-72 ~]$ mysql -u admin -p -h database-1.cuwbt2khjtcw.us-east-1.rds.amazonaws.com
+Enter password: 
+Welcome to the MySQL monitor.  Commands end with ; or \g.
+Your MySQL connection id is 256
+Server version: 8.0.28 Source distribution
+
+Copyright (c) 2000, 2023, Oracle and/or its affiliates.
+
+Oracle is a registered trademark of Oracle Corporation and/or its
+affiliates. Other names may be trademarks of their respective
+owners.
+
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+
+mysql> show tables;
+ERROR 1046 (3D000): No database selected
+mysql> show databases;
++--------------------+
+| Database           |
++--------------------+
+| information_schema |
+| mysql              |
+| performance_schema |
+| sys                |
+| udacity            |
++--------------------+
+5 rows in set (0.02 sec)
+
+mysql> use udacity;
+Reading table information for completion of table and column names
+You can turn off this feature to get a quicker startup with -A
+
+Database changed
+mysql> show tables;
++-------------------+
+| Tables_in_udacity |
++-------------------+
+| employees         |
++-------------------+
+1 row in set (0.00 sec)
+
+mysql> describe employees;
++------------+--------------+------+-----+---------+-------+
+| Field      | Type         | Null | Key | Default | Extra |
++------------+--------------+------+-----+---------+-------+
+| EmployeeID | int          | YES  |     | NULL    |       |
+| LastName   | varchar(255) | YES  |     | NULL    |       |
+| FirstName  | varchar(255) | YES  |     | NULL    |       |
+| Address    | varchar(255) | YES  |     | NULL    |       |
+| Phone      | varchar(255) | YES  |     | NULL    |       |
++------------+--------------+------+-----+---------+-------+
+5 rows in set (0.01 sec)
+
+mysql> select * from employees;
++------------+----------+-----------+---------+------------+
+| EmployeeID | LastName | FirstName | Address | Phone      |
++------------+----------+-----------+---------+------------+
+|          1 | Le       | Nam       | Cebu    | 0123456789 |
++------------+----------+-----------+---------+------------+
+1 row in set (0.00 sec)

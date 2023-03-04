@@ -1,0 +1,18 @@
+mysql> insert into employees values(2,'Timberlake','Justin','US','0123456789');
+ERROR 2013 (HY000): Lost connection to MySQL server during query
+No connection. Trying to reconnect...
+Connection id:    9
+Current database: udacity
+
+Query OK, 1 row affected (0.04 sec)
+
+mysql> select * from employees;
++------------+------------+-----------+---------+------------+
+| EmployeeID | LastName   | FirstName | Address | Phone      |
++------------+------------+-----------+---------+------------+
+|          1 | Le         | Nam       | Cebu    | 0123456789 |
+|          2 | Timberlake | Justin    | US      | 0123456789 |
++------------+------------+-----------+---------+------------+
+2 rows in set (0.00 sec)
+
+mysql>
